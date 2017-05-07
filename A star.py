@@ -46,6 +46,11 @@ while running:
     else:
         grid.update_mouse()
 
+        if key[pygame.K_w]:
+            grid.reset()
+
+            solving = False
+
     grid.draw()
 
     pygame.display.flip()

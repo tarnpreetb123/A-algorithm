@@ -58,3 +58,11 @@ class node:
     def draw(self):
         pygame.draw.rect(self.display, self.color, pygame.Rect(self.j * self.width, self.i * self.height, self.width, self.height))
         pygame.draw.rect(self.display, self.white, pygame.Rect(self.j * self.width, self.i * self.height, self.width, self.height), 1)
+
+    def reset(self):
+        self.h = 0
+        self.g = 0
+        self.f = 0
+        self.wall = False
+        self.color = (0, 0, 0)
+        self.white = (255, 255, 255)

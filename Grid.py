@@ -112,12 +112,18 @@ class Grid:
         if j > self.cols - 1:
             j = self.cols - 1
 
-        #print(i)
-        #print(pygame.mouse.get_pressed()[0])
         if pygame.mouse.get_pressed()[0] == 1:
             self.grid[i][j].set_wall(True)
         elif pygame.mouse.get_pressed()[2] == 1:
             self.grid[i][j].set_wall(False)
 
+    def reset(self):
+        self.openSet = []
+        self.openSet.append(self.start)
+        self.closedSet = []
+        self.path = []
+        self.done = False
 
-
+        for i in range(self.rows):
+            for j in range(self.cols):
+                self.grid[i][j].reset()
